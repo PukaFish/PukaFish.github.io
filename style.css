@@ -1,6 +1,6 @@
-body {
+.base {
     color: #c0a27e;
-    background-color: #090d0c;
+    background-image: url("https://www.cato.org/sites/cato.org/files/styles/optimized/public/2021-01/GettyImages-1226985345.jpg?itok=f9SULHjG%22");
     font-size: 15px;
     text-align: center;
     font-family: Anonymous Pro, monospace;
@@ -13,6 +13,7 @@ h1 {
     font-weight: bold;
     text-align: center;
     font-family: Anonymous Pro, monospace;
+    opacity: 0.9;
 }
 
 h2 {
@@ -22,4 +23,10 @@ h2 {
     font-weight: bold;
     text-align: center;
     font-family: Anonymous Pro, monospace;
+    opacity: 0.9;
 } 
+
+p{
+    background-color: #090d0c;
+    opacity: 0.9;
+}
