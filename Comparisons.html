@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <!--Base-->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Genshin's Characters Popularity: Compare Sites</title>
+    <link rel='stylesheet' href='style.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!--1 Data-->
+    <meta charset="utf-8">
+    <script src="https://d3js.org/d3.v4.js"></script>
+</head>
+
+<body>
+    <!--Standard Base and Navigation-->
+    <div>
+        <div class="mainImage">
+            <div class="imageTitle">
+                <h1>
+                    <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/logo/2465517595f5ea9f225d52ed73a4d0db.png" />
+                </h1>
+                <h2 id="titleDesc">
+                    Character Popularity based on Google and Reddit
+                </h2>
+            </div>
+        </div>
+        <div class="navi">
+            <a href='index.html'>Home</a>
+            <a href="RedditData.html">Reddit Data</a>
+            <a href="GoogleData.html">Google Data</a>
+            <a class="active" href="Comparisons.html">Comparing the Data</a>
+        </div>
+    </div>
+    <div class="acrossScreen">
+        <h1 class="padding">Data Site Comparisons</h1>
+        <p class="center">
+            This page works on mainly comparing the differences between the character rankings for Reddit and Google to see the difference in what
+            people look for when googling or looking at their favorite character in a post.
+        </p>
+
+        <!--Data 1-->
+        <div id="my_dataviz" class="specialTab overflowD3">
+            <!--Base Explanation and Title-->
+            <h1 class="padding standardTextColor"> Comparison by Parallel Coordinates:</h1>
+            <p class="center standardTextColor">
+                The Parallel Coordination Chart places character based off their rank in each server. It is easy to see that there are some characters who
+                are the same rank in both websites while there are others who are dramatically different in one site to another. Below is a color key along
+                with the chart.
+            </p>
+            <!--Actual Data-->
+            <div class="row">
+                <div class="col-12">
+                    <script>
+                        // set the dimensions and margins of the graph
+                        var margin = { top: 100, right: 20, bottom: 10, left: 20},
+                            width = 560 - margin.left - margin.right,
+                            height = 560 - margin.top - margin.bottom;
+
+                        // append the svg object to the body of the page
+                        var svg = d3.select("#my_dataviz")
+                            .append("svg")
+                            .attr("width", width + margin.left + margin.right)
+                            .attr("height", height + margin.top + margin.bottom)
+                            .append("g")
+                            .attr("transform",
+                                "translate(" + margin.left + "," + margin.top + ")");
+
+                        // Parse the Data
+                        let data = [
+                            { 'Species': 'Klee', 'Reddit': 2, 'Google': 27 },
+                            { 'Species': 'Barbara', 'Reddit': 11, 'Google': 17 },
+                            { 'Species': 'Mona', 'Reddit': 7, 'Google': 11 },
+                            { 'Species': 'Xiangling', 'Reddit': 20, 'Google': 42 },
+                            { 'Species': 'Yaoyao', 'Reddit': 33, 'Google': 57 },
+                            { 'Species': 'Bennett', 'Reddit': 24, 'Google': 36 },
+                            { 'Species': 'Zhongli', 'Reddit': 1, 'Google': 4 },
+                            { 'Species': 'Hu Tao', 'Reddit': 4, 'Google': 21 },
+                            { 'Species': 'Ganyu', 'Reddit': 6, 'Google': 3 },
+                            { 'Species': 'Lumine', 'Reddit': 3, 'Google': 20 },
+                            { 'Species': 'Raiden', 'Reddit': 9, 'Google': 1 },
+                            { 'Species': 'La Signora', 'Reddit': 26, 'Google': 55 },
+                            { 'Species': 'Jean', 'Reddit': 4, 'Google': 2 },
+                            { 'Species': 'Qiqi', 'Reddit': 17, 'Google': 39 },
+                            { 'Species': 'Xiao', 'Reddit': 13, 'Google': 13 },
+                            { 'Species': 'Venti', 'Reddit': 8, 'Google': 23 },
+                            { 'Species': 'Albedo', 'Reddit': 17, 'Google': 16 },
+                            { 'Species': 'Amber', 'Reddit': 18, 'Google': 7 },
+                            { 'Species': 'Diluc', 'Reddit': 12, 'Google': 19 },
+                            { 'Species': 'Diona', 'Reddit': 26, 'Google': 46 },
+                            { 'Species': 'Lisa', 'Reddit': 22, 'Google': 9 },
+                            { 'Species': 'Razor', 'Reddit': 30, 'Google': 32 },
+                            { 'Species': 'Beidou', 'Reddit': 21, 'Google': 37 },
+                            { 'Species': 'Kokomi', 'Reddit': 27, 'Google': 30 },
+                            { 'Species': 'Sara', 'Reddit': 23, 'Google': 8 },
+                            { 'Species': 'Ningguang', 'Reddit': 16, 'Google': 33 },
+                            { 'Species': 'Kaeya', 'Reddit': 20, 'Google': 31 },
+                            { 'Species': 'Aether', 'Reddit': 5, 'Google': 5 },
+                            { 'Species': 'Paimon', 'Reddit': 14, 'Google': 14 },
+                            { 'Species': 'Shenhe', 'Reddit': 29, 'Google': 31 },
+                            { 'Species': 'Yun Jin', 'Reddit': 33, 'Google': 51 },
+                            { 'Species': 'Fischl', 'Reddit': 19, 'Google': 29 },
+                            { 'Species': 'Childe', 'Reddit': 15, 'Google': 28 },
+                            { 'Species': 'Eula', 'Reddit': 13, 'Google': 10 },
+                            { 'Species': 'Noelle', 'Reddit': 19, 'Google': 22 },
+                            { 'Species': 'Yanfei', 'Reddit': 28, 'Google': 48 },
+                            { 'Species': 'Yae Miko', 'Reddit': 24, 'Google': 15 },
+                            { 'Species': 'Sucrose', 'Reddit': 25, 'Google': 43 },
+                            { 'Species': 'Keqing', 'Reddit': 10, 'Google': 6 },
+                            { 'Species': 'Ayaka', 'Reddit': 20, 'Google': 30 },
+                            { 'Species': 'Thoma', 'Reddit': 31, 'Google': 18 },
+                            { 'Species': 'Xingqiu', 'Reddit': 22, 'Google': 41 },
+                            { 'Species': 'Chongyun', 'Reddit': 24, 'Google': 49 },
+                            { 'Species': 'Kazuha', 'Reddit': 21, 'Google': 24 },
+                            { 'Species': 'Scaramouche', 'Reddit': 27, 'Google': 35 },
+                            { 'Species': 'Dainsleif', 'Reddit': 35, 'Google': 54 },
+                            { 'Species': 'Xinyan', 'Reddit': 22, 'Google': 53 },
+                            { 'Species': 'Yoimiya', 'Reddit': 23, 'Google': 38 },
+                            { 'Species': 'Ayato', 'Reddit': 32, 'Google': 44 },
+                            { 'Species': 'Sayu', 'Reddit': 29, 'Google': 50 },
+                            { 'Species': 'Itto', 'Reddit': 27, 'Google': 47 },
+                            { 'Species': 'Rosaria', 'Reddit': 27, 'Google': 34 },
+                            { 'Species': 'Gorou', 'Reddit': 34, 'Google': 45 },
+                            { 'Species': 'Yelan', 'Reddit': 29, 'Google': 40 },
+                            { 'Species': 'Baizhu', 'Reddit': 34, 'Google': 56 },
+                            { 'Species': 'Shinobu', 'Reddit': 34, 'Google': 12 },
+                            { 'Species': 'Heizou', 'Reddit': 35, 'Google': 52 },
+                            { 'Species': 'Nilou', 'Reddit': 35, 'Google': 25 },
+                        ]
+
+
+                        // Color scale: give me a specie name, I return a color
+                        var color = d3.scaleOrdinal()
+                            .domain(["Klee", "Barbara", "Mona", "Xiangling", "Yaoyao", "Bennett", "Zhongli", "Hu Tao", "Ganyu", "Lumine", "Raiden",
+                                "La Signora", "Jean", "Qiqi", "Xiao", "Venti", "Albedo", "Amber", "Diluc", "Diona", "Lisa", "Razor", "Beidou",
+                                "Kokomi", "Sara", "Ningguang", "Kaeya", "Aether", "Paimon", "Shenhe", "Yun Jin", "Fischl", "Childe", "Eula", "Noelle",
+                                "Yanfei", "Yae Miko", "Sucrose", "Keqing", "Ayaka", "Thoma", "Xingqiu", "Chongyun", "Kazuha", "Scaramouche", "Dainsleif",
+                                "Xinyan", "Yoimiya", "Ayato", "Sayu", "Itto", "Rosaria", "Gorou", "Yelan", "Baizhu", "Shinobu", "Heizou", "Nilou"])
+                            .range(["#cc0000", "#99ccff", "#002db3", "#ff9980", "#ecffb3", "#ffe6e6", "#cc9900", "#993300", "#ccccff", "#ffffcc",
+                                "#cc33ff", "#ff0000", "#99ffcc", "#e6e6ff", "#009999", "#66ffcc", "#ffffe6", "#990000", "#993333", "#ffcccc", "#9900e6",
+                                "#990099", "#993366", "#ffccee", "#330033", "#ffbf00", "#b3b3ff", "#ffff66", "#ffffff", "#336699", "#ff66ff", "#c61aff",
+                                "#3399ff", "#ccddff", "#ff3399", "#ff99e6", "#ff00bf", "#00ffcc", "#d9b3ff", "#e6f2ff", "#990033", "#0066ff", "#b3d9ff",
+                                "#bf4040", "#00cccc", "#00004d", "#660000", "#ff3300", "#0066cc", "#999966", "#e6ac00", "#8c8cd9", "#ffdf80",
+                                "#0033cc", "#00FF00", "#33cc33", "#408000", "#1ac6ff"])
+
+                        // Here I set the list of dimension manually to control the order of axis:
+                        dimensions = ["Reddit", "Google"]
+
+                        // For each dimension, I build a linear scale. I store all in a y object
+                        var y = {}
+                        for (i in dimensions) {
+                            name = dimensions[i]
+                            y[name] = d3.scaleLinear()
+                                .domain([0, 57]) // --> Same axis range for each group
+                                // --> different axis range for each group --> .domain( [d3.extent(data, function(d) { return +d[name]; })] )
+                                .range([height, 0])
+                        }
+
+                        // Build the X scale -> it find the best position for each Y axis
+                        x = d3.scalePoint()
+                            .range([0, width])
+                            .domain(dimensions);
+
+
+                        // Highlight the specie that is hovered
+                        var highlight = function (d) {
+
+                            selected_specie = d.Species
+
+                            // first every group turns grey
+                            d3.selectAll(".line")
+                                .transition().duration(200)
+                                .style("stroke", "grey")
+                                .style("opacity", "0.2")
+                            // Second the hovered specie takes its color
+                            d3.selectAll("." + selected_specie)
+                                .transition().duration(200)
+                                .style("stroke", color(selected_specie))
+                                .style("opacity", "1")
+                        }
+
+                        // Unhighlight
+                        var doNotHighlight = function (d) {
+                            d3.selectAll(".line")
+                                .transition().duration(200).delay(1000)
+                                .style("stroke", function (d) { return (color(d.Species)) })
+                                .style("opacity", "1")
+                        }
+
+                        // The path function take a row of the csv as input, and return x and y coordinates of the line to draw for this raw.
+                        function path(d) {
+                            return d3.line()(dimensions.map(function (p) { return [x(p), y[p](d[p])]; }));
+                        }
+
+                        // Draw the lines
+                        svg
+                            .selectAll("myPath")
+                            .data(data)
+                            .enter()
+                            .append("path")
+                            .attr("class", function (d) { return "line " + d.Species }) // 2 class for each line: 'line' and the group name
+                            .attr("d", path)
+                            .style("fill", "none")
+                            .style("stroke", function (d) { return (color(d.Species)) })
+                            .style("opacity", 0.5)
+                            .on("mouseover", highlight)
+                            .on("mouseleave", doNotHighlight)
+
+                        // Draw the axis:
+                        svg.selectAll("myAxis")
+                            // For each dimension of the dataset I add a 'g' element:
+                            .data(dimensions).enter()
+                            .append("g")
+                            .attr("class", "axis")
+                            // I translate this element to its right position on the x axis
+                            .attr("transform", function (d) { return "translate(" + x(d) + ")"; })
+                            // And I build the axis with the call function
+                            .each(function (d) { d3.select(this).call(d3.axisLeft().ticks(5).scale(y[d])); })
+                            // Add axis title
+                            .append("text")
+                            .style("text-anchor", "middle")
+                            .attr("y", -9)
+                            .text(function (d) { return d; })
+                            .style("fill", "aliceBlue")
+
+                        // Add title to graph
+                        svg.append("text")
+                            .attr("x", 80)
+                            .attr("y", -50)
+                            .attr("text-anchor", "center")
+                            .style("font-size", "22px")
+                            .style("fill", "white")
+                            .text("Reddit and Google Rank Comparison");
+                    </script>
+                </div>
+            </div>
+            <!--Legend/Key-->
+            <div class="row">
+                <div class="col-4">
+                    <img src="Image/Key_1.png" />
+                </div>
+                <div class="col-4">
+                    <img src="Image/Key_2.png" />
+                </div>
+                <div class="col-4">
+                    <img src="Image/Key_3.png" />
+                </div>
+            </div>
+            <!--Divider-->
+            <h2><i class="material-icons standardTextColor">star</i></h2>
+        </div>
+
+        <!--Data 2-->
+        <div class="acrossScreen">
+            <!--Base and Explanation-->
+            <h1 class="padding">Using <a href="https://trends.google.com/trends/?geo=US">Google Trends</a> to Compare Top Three Googled Characters with Top Two Reddit Characters:</h1>
+            <p class="center">
+                Similarly to the data presented in the <a href="GoogleData.html">Google Data Page</a>, it now takes the top three Googled characters and
+                see the difference of searches between the top two Reddit like characters. Klee, Reddit's favored character, is a character that
+                often fell short when it comes to Google searches unlike Zhongli, who is second place for Reddit and fourth for Google. You can now see
+                their peak popularity and where. <br /> <b>Note for the graph</b>, the y-axis represents the frequency of searches. So when it reaches 100, it is
+                the peak of when the character was searched for.
+            </p>
+            <div class="overflowGoogle">
+                <div class="reponsiveContainerGoogle">
+                    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3140_RC01/embed_loader.js"></script>
+                    <script type="text/javascript">trends.embed.renderExploreWidget("TIMESERIES", { "comparisonItem": [{ "keyword": "Ganyu Genshin", "geo": "", "time": "2020-09-01 2022-10-15" }, { "keyword": "Jean Genshin", "geo": "", "time": "2020-09-01 2022-10-15" }, { "keyword": "Raiden Genshin", "geo": "", "time": "2020-09-01 2022-10-15" }, { "keyword": "Zhongli Genshin", "geo": "", "time": "2020-09-01 2022-10-15" }, { "keyword": "Klee Genshin", "geo": "", "time": "2020-09-01 2022-10-15" }], "category": 0, "property": "" }, { "exploreQuery": "date=2020-09-01%202022-10-15&q=Ganyu%20Genshin,Jean%20Genshin,Raiden%20Genshin,Zhongli%20Genshin,Klee%20Genshin", "guestPath": "https://trends.google.com:443/trends/embed/" });</script>
+                </div>
+                <div class="reponsiveContainerGoogle">
+                    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3140_RC01/embed_loader.js"></script>
+                    <script type="text/javascript">trends.embed.renderExploreWidget("GEO_MAP", { "comparisonItem": [{ "keyword": "Ganyu Genshin", "geo": "", "time": "2020-09-01 2022-10-15" }, { "keyword": "Jean Genshin", "geo": "", "time": "2020-09-01 2022-10-15" }, { "keyword": "Raiden Genshin", "geo": "", "time": "2020-09-01 2022-10-15" }, { "keyword": "Zhongli Genshin", "geo": "", "time": "2020-09-01 2022-10-15" }, { "keyword": "Klee Genshin", "geo": "", "time": "2020-09-01 2022-10-15" }], "category": 0, "property": "" }, { "exploreQuery": "date=2020-09-01%202022-10-15&q=Ganyu%20Genshin,Jean%20Genshin,Raiden%20Genshin,Zhongli%20Genshin,Klee%20Genshin", "guestPath": "https://trends.google.com:443/trends/embed/" });</script>
+                </div>
+            </div>
+            <!--Divider-->
+            <h2><i class="material-icons">star</i></h2>
+        </div>
+
+        <!--Final Conclusion-->
+        <div class="acrossScreen">
+            <h1 class="padding">Conclusion:</h1>
+            <p class="center">
+                The height of every character's popularity will always be when they are first announced. After that, their reruns and events where they are mentioned 
+                will have some height (i.e. Klee's summer event from May to June). Most characters between the ranks of Reddit have a high chance of losing their rank on the Google Leaderboard. 
+            </p>
+        </div>
+    </div>
+</body>
+</html>
