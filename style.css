@@ -16,14 +16,8 @@ img {
     background-repeat: no-repeat;
 }
 
-body {
-    background-image: url("Images/Main_Images/Pattern.png");
-    color: #000033;
-    font-family: "Garamond", Times, serif;
-}
-
 p {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 a:hover {
@@ -36,6 +30,21 @@ a:hover {
     overflow-x:auto;
 }
 
+.body {
+    background-image: url("Images/Main_Images/Pattern.png");
+    color: #000033;
+    font-family: "Alice", sans-serif;
+    font-size: large;
+}
+
+.acc{
+    color: #00006d;
+}
+
+.bookmark{
+    color:#000033;
+}
+
 .mainImage {
     background-image: url("Images/Main_Images/Header.jpg");
     height: 400px;
@@ -44,6 +53,17 @@ a:hover {
     background-size: cover;
     position: relative;
  }
+
+ @media screen and (max-width: 600px) {
+    div.mainImageSmall{
+        background-image: url("Images/Main_Images/Header_Small.jpg");
+        height: 400px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+     }
+  }
 
 .imageAsIcon {
     height: 60px;
@@ -107,6 +127,14 @@ a:hover {
 
 div.polaroid {
     width: 80%;
+    margin: auto;
+    background-color: #EDF2FB;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
+}
+
+div.polaroid:hover{
+    width:100%;
     margin: auto;
     background-color: #EDF2FB;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -180,4 +208,32 @@ div.container {
     border-color: #D7E3FC;
     border-style: outset;
     margin-top: 10%;
+}
+
+.tag {
+  opacity: 0;
+  transform: translate(0, 10vh);
+  transition: all 1s;
+}
+
+.tag.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/*Animations*/
+@keyframes floatingK {
+    0% {top:270px}
+    25% {top:285px}
+    50% {bottom:285px}
+    75% {top:285px}
+    100% {top:270px}
+}
+
+.floating{
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    animation-name: floatingK;
+    position: relative;
+    animation-duration: 3s;
 }
