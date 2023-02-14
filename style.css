@@ -45,6 +45,10 @@ a:hover {
     color:#000033;
 }
 
+.text-black {
+    color: #000033;
+}
+
 .mainImage {
     background-image: url("Images/Main_Images/Header.jpg");
     height: 400px;
