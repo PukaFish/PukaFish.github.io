@@ -45,6 +45,10 @@ a:hover {
     color:#000033;
 }
 
+.text-black {
+    color: #000033;
+}
+
 .mainImage {
     background-image: url("Images/Main_Images/Header.jpg");
     height: 400px;
@@ -56,7 +60,7 @@ a:hover {
 
  @media screen and (max-width: 600px) {
     div.mainImageSmall{
-        background-image: url("Images/Main_Images/Header_Small.jpg");
+        background-image: url("Images/Main_Images/Small_Header.png");
         height: 400px;
         background-position: center;
         background-repeat: no-repeat;
@@ -189,6 +193,14 @@ div.container {
     background-color: #B6CCFE;
     background-position: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.footer{
+    margin-top: 10px;
+    bottom: 10px;
+    width: 100%;
+    background-color: #000033;
+    color:#EDF2FB;
 }
 
 .marginTextRight{
