@@ -24,6 +24,11 @@ a:hover {
     background-color: #D7E3FC;
 }
 
+iframe{
+    max-width: 100%;
+    height: auto;
+}
+
 /*CLASSES*/
 /** Overflow (for tables) - https://www.w3schools.com/howto/howto_css_table_responsive.asp **/
 .overflow {
