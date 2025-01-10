@@ -22,6 +22,7 @@ p {
 
 a:hover {
     background-color: #D7E3FC;
+    border-radius: 10px;
 }
 
 iframe{
@@ -139,7 +140,7 @@ iframe{
     }
 
 div.polaroid {
-    width: 80%;
+    width: 99%;
     margin: auto;
     background-color: #EDF2FB;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -200,6 +201,12 @@ div.container {
 
 .darkBlueSection {
     background-color: #B6CCFE;
+    background-position: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.darkerblueSection {
+    background-color: #778bb8;
     background-position: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
