@@ -41,7 +41,7 @@ iframe{
 }
 
 .body {
-    background-image: url("Images/Main_Images/Pattern.png");
+    background-image: url("Images/Main_Images/New_Pattern.png");
     color: #000033;
     font-family: "Alice", sans-serif;
     font-size: large;
@@ -60,7 +60,7 @@ iframe{
 }
 
 .mainImage {
-    background-image: url("Images/Main_Images/Header.jpg");
+    background-image: url("Images/Main_Images/New_Title.png");
     height: 400px;
     background-position: center;
     background-repeat: no-repeat;
@@ -70,7 +70,7 @@ iframe{
 
  @media screen and (max-width: 600px) {
     div.mainImageSmall{
-        background-image: url("Images/Main_Images/Small_Header.png");
+        background-image: url("Images/Main_Images/New_Title.png");
         height: 400px;
         background-position: center;
         background-repeat: no-repeat;
