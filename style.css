@@ -68,16 +68,48 @@ iframe{
     position: relative;
  }
 
- @media screen and (max-width: 600px) {
-    div.mainImageSmall{
-        background-image: url("Images/Main_Images/New_Title.png");
-        height: 400px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-     }
-  }
+.holographic-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+}
+
+.holographic-card a{
+background: transparent;
+}
+
+.holographic-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    0deg, 
+    transparent, 
+    transparent 30%, 
+    rgba(44, 157, 255, 0.3)
+  );
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.holographic-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 119, 255, 0.5);
+  background-color: rgba(0, 85, 255, 0.134);
+}
+
+.holographic-card:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
 
 .imageAsIcon {
     height: 60px;
@@ -212,10 +244,8 @@ div.container {
 }
 
 .footer{
-    margin-top: 10px;
-    bottom: 10px;
     width: 100%;
-    background-color: #000033;
+    background-color: #4b4ba6;
     color:#EDF2FB;
 }
 
