@@ -215,6 +215,12 @@ div.container {
      }
   }
 
+   @media screen and (max-width: 1000px) {
+    .disappear{
+      display: none;
+    }
+  }
+
 .footer{
     width: 100%;
     background-color: #4b4ba6;
