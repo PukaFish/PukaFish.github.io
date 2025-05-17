@@ -32,16 +32,16 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                            </li>&nbsp; |
+                            </li>&nbsp; ⋆｡°✩
                             <li class="nav-item">
                               <a class="nav-link active" aria-current="page" href="ui.html">User Interface Design (UI)</a>
-                            </li>&nbsp; |
+                            </li>&nbsp; ⋆｡°✩
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="games.html">Game Development</a>
-                            </li>&nbsp; |
+                            </li>&nbsp; ⋆｡°✩
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="projects.html">Web Development</a>
-                            </li>&nbsp; |
+                            </li>&nbsp; ⋆｡°✩
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page"
                                     href="https://drive.google.com/file/d/1CJjCTM4J2sIrubrLWlVSDiSYEZeaJaxn/view?usp=sharing"
@@ -65,23 +65,25 @@
     </section>
 
   <!--Introduction and Page Navi Bar-->
-  <div>
+<div class="darkerblueSection">
     <br />
-    <h1 class="text-center" id="intro">Game Development: Introduction</h1>
-    <p class="marginTextWhole">
-        I enjoy making games because I find it as a great way to communicate a story or an idea in an entertaining way.
-        <br/><br/>I am usually tasked with art so I specialize in a cartoon, 2D style. Doing this I have worked with various
-         art programs like Adobe Photoshop and Animate. I have a long history of doing game UI as well. Thankfully, I am not limited
-         to 2D as I also work with 3D assets using Maya, Blender, and Substance Painter.
-        <br/><br/> In terms of programming, I usually deal with programming matters related to the UI interface or various
-         game loops. I have a large focus on working with dialogue systems because I tend to like story based games.
-         Although not entirely programming related, I also have experience in level design. My motto is to make things pretty, but still functional.
-        <br/><br/> Below are current and past projects that I have worked on.
-    </p>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1 class="text-center textWhite" id="intro">Game Dev Philosophy</h1>
+            <p class="marginTextWhole centerExpection textWhite">
+              Games are all about telling a story and showing a purpose. Every game has a message from the creator, something that they deeply wanted to tell the world. I create because there is my own story that I want to tell the world.
+              <br/><br/> I specalize in Art (UI/UX, 3D, 2D) and programming (Unreal, Unity).
+            </p>
+          </div>
+          <div class="col-md-5"></div>
+        </div>
+    </div>
+    <br/><br/>
   </div>
   </section>
- 
-  <!--Information-->
+
+  </section>
   <!--2025-->
   <section class="tag">
     <h1 class="darkBlueSection text-center">2025</h1>
@@ -541,7 +543,7 @@
     <footer>
       <div class="text-center footer">
           <br/>
-          <p> © Kayla Huynh. All rights reserved.</p>
+            <p> © Kayla Huynh. All rights reserved. Respective trademarks belong to its own organization.</p>
           <br/>
       </div>
     </footer>
@@ -565,6 +567,7 @@
     });
   </script>
 
+<!--Slideshow-->
 <script>
   let slideIndex = 1;
   showSlides(slideIndex);
@@ -592,6 +595,47 @@
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " actived";
   }
+  </script>
+
+  <!--Modal-->
+  <script>
+        // Get the button that opens the modal
+    var btn = document.querySelectorAll("a.modal-button");
+
+    // All page modals
+    var modals = document.querySelectorAll(".modal");
+
+    // Get the <span> element that closes the modal
+    var spans = document.getElementsByClassName("close");
+
+    // When the user clicks the button, open the modal
+    for (var i = 0; i < btn.length; i++) {
+      btn[i].onclick = function (e) {
+        e.preventDefault();
+        modal = document.querySelector(e.target.getAttribute("href"));
+        modal.style.display = "block";
+      };
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    for (var i = 0; i < spans.length; i++) {
+      spans[i].onclick = function () {
+        for (var index in modals) {
+          if (typeof modals[index].style !== "undefined")
+            modals[index].style.display = "none";
+        }
+      };
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target.classList.contains("modal")) {
+        for (var index in modals) {
+          if (typeof modals[index].style !== "undefined")
+            modals[index].style.display = "none";
+        }
+      }
+    };
   </script>
 
   <!-- Google tag (gtag.js) -->
