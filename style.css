@@ -1,74 +1,74 @@
 /** Reset **/
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /*MAIN*/
 /** Image - https://www.w3schools.com/css/css_rwd_grid.asp **/
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-position: center;
-    background-repeat: no-repeat;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
-.linkTitle{
-  color:#B6CCFE;
+.linkTitle {
+  color: #B6CCFE;
 }
 
-.linkTitle:hover{
+.linkTitle:hover {
   background-color: #D7E3FC;
-  color:#111d3e;
+  color: #111d3e;
   border-radius: 10px;
 }
 
 a:hover {
-    background-color: #D7E3FC;
-    border-radius: 10px;
+  background-color: #D7E3FC;
+  border-radius: 10px;
 }
 
-iframe{
-    width: 100%;
-    height: 450px;
+iframe {
+  width: 100%;
+  height: 450px;
 }
 
-#note{
-    font-size: small;
+#note {
+  font-size: small;
 }
 
 /*CLASSES*/
 /** Overflow (for tables) - https://www.w3schools.com/howto/howto_css_table_responsive.asp **/
 .overflow {
-    overflow-x:auto;
+  overflow-x: auto;
 }
 
 .body {
-    background-image: url("Images/Main_Images/Pattern.png");
-    color: #000033;
-    font-family: "Alice", sans-serif;
-    font-size: large;
+  background-image: url("Images/Main_Images/Pattern.png");
+  color: #000033;
+  font-family: "Alice", sans-serif;
+  font-size: large;
 }
 
-.acc{
-    color: #00006d;
+.acc {
+  color: #00006d;
 }
 
 .mainImage {
-    background-image: url("Images/Main_Images/New_Title.png");
-    height: 400px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
- }
+  background-image: url("Images/Main_Images/New_Title.png");
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 
 .holographic-card {
   display: flex;
@@ -80,8 +80,8 @@ iframe{
   transition: all 0.5s ease;
 }
 
-.holographic-card a{
-background: transparent;
+.holographic-card a {
+  background: transparent;
 }
 
 .holographic-card::before {
@@ -91,12 +91,10 @@ background: transparent;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    0deg, 
-    transparent, 
-    transparent 30%, 
-    rgba(44, 157, 255, 0.3)
-  );
+  background: linear-gradient(0deg,
+      transparent,
+      transparent 30%,
+      rgba(44, 157, 255, 0.3));
   transform: rotate(-45deg);
   transition: all 0.5s ease;
   opacity: 0;
@@ -114,70 +112,70 @@ background: transparent;
 }
 
 .imageAsIcon {
-    height: 60px;
-    width: 60px;
-    display: unset;
-    margin-left: unset;
-    margin-right: unset;
-    margin: 5px;
+  height: 60px;
+  width: 60px;
+  display: unset;
+  margin-left: unset;
+  margin-right: unset;
+  margin: 5px;
 }
 
 .iconAsIcon {
-    height: 60px;
-    width: auto;
-    display: unset;
-    margin-left: unset;
-    margin-right: unset;
-    margin: 5px;
+  height: 60px;
+  width: auto;
+  display: unset;
+  margin-left: unset;
+  margin-right: unset;
+  margin: 5px;
 }
 
 .uniqueBorderMain {
-    position: relative;
-    top: 280px;
-    z-index: 1;
-    max-width: 100%;
-    height: auto;
+  position: relative;
+  top: 280px;
+  z-index: 1;
+  max-width: 100%;
+  height: auto;
 }
 
 .uniqueBorder {
-    position: relative;
-    top: -15px;
-    height: auto;
-    z-index: 1;
-    max-width: 100%;
-    margin-bottom: -500px;
-    margin-top: -100px;
+  position: relative;
+  top: -15px;
+  height: auto;
+  z-index: 1;
+  max-width: 100%;
+  margin-bottom: -500px;
+  margin-top: -100px;
 }
 
-.iconException{
-    padding: 10px;
-    color:#000033;
-    text-decoration: none;
+.iconException {
+  padding: 10px;
+  color: #000033;
+  text-decoration: none;
 }
 
 .centerExpection {
-    text-align: left;
+  text-align: left;
 }
 
 div.polaroid {
-    width: 99%;
-    margin: auto;
-    background-color: #EDF2FB;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 20px;
+  width: 99%;
+  margin: auto;
+  background-color: #EDF2FB;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 20px;
 }
 
-div.polaroid:hover{
-    width:100%;
-    margin: auto;
-    background-color: #EDF2FB;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 20px;
+div.polaroid:hover {
+  width: 100%;
+  margin: auto;
+  background-color: #EDF2FB;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 20px;
 }
 
 div.container {
-    text-align: center;
-    padding: 10px 20px;
+  text-align: center;
+  padding: 10px 20px;
 }
 
 .text {
@@ -187,63 +185,63 @@ div.container {
   padding: 16px 32px;
 }
 
-.textWhite{
+.textWhite {
   color: white;
 }
 
 .darkBlueSection {
-    background-color: #B6CCFE;
-    background-position: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #B6CCFE;
+  background-position: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .darkerblueSection {
-    background-image: url(Images/Main_Images/Test.png);
-    background-repeat:no-repeat;
+  background-image: url(Images/Main_Images/Test.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (max-width: 1000px) {
+  div.darkerblueSection {
+    background-image: url(Images/Main_Images/Test_2.png);
+    height: 400px;
     background-position: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- @media screen and (max-width: 1000px) {
-    div.darkerblueSection{
-      background-image: url(Images/Main_Images/Test_2.png);
-        height: 400px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-     }
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
   }
+}
 
-   @media screen and (max-width: 1000px) {
-    .disappear{
-      display: none;
-    }
+@media screen and (max-width: 1000px) {
+  .disappear {
+    display: none;
   }
-
-.footer{
-    width: 100%;
-    background-color: #4b4ba6;
-    color:#EDF2FB;
 }
 
-.marginTextRight{
-    margin-right: 50px;
+.footer {
+  width: 100%;
+  background-color: #4b4ba6;
+  color: #EDF2FB;
 }
 
-.marginTextWhole{
-    margin-left: 10%;
-    margin-right: 10%;
+.marginTextRight {
+  margin-right: 50px;
 }
 
-.marginTextBox{
-    margin-top: 10px;
+.marginTextWhole {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-.sypnosisBox{
-    border-color: #D7E3FC;
-    border-style: outset;
-    margin-top: 10%;
+.marginTextBox {
+  margin-top: 10px;
+}
+
+.sypnosisBox {
+  border-color: #D7E3FC;
+  border-style: outset;
+  margin-top: 10%;
 }
 
 .tag {
@@ -259,25 +257,47 @@ div.container {
 
 /*Animations*/
 @keyframes floatingK {
-    0% {top:270px}
-    25% {top:285px}
-    50% {bottom:285px}
-    75% {top:285px}
-    100% {top:270px}
+  0% {
+    top: 270px
+  }
+
+  25% {
+    top: 285px
+  }
+
+  50% {
+    bottom: 285px
+  }
+
+  75% {
+    top: 285px
+  }
+
+  100% {
+    top: 270px
+  }
 }
 
-.floating{
-    animation-iteration-count: infinite;
-    background-repeat: no-repeat;
-    animation-name: floatingK;
-    position: relative;
-    animation-duration: 3s;
+.floating {
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  animation-name: floatingK;
+  position: relative;
+  animation-duration: 3s;
 }
 
 /*Style for slideshow*/
-* {box-sizing: border-box}
-.mySlides {display: none}
-img {vertical-align: middle;}
+* {
+  box-sizing: border-box
+}
+
+.mySlides {
+  display: none
+}
+
+img {
+  vertical-align: middle;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -287,7 +307,8 @@ img {vertical-align: middle;}
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: relative;
   top: 50%;
@@ -309,8 +330,9 @@ img {vertical-align: middle;}
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -345,7 +367,8 @@ img {vertical-align: middle;}
   transition: background-color 0.6s ease;
 }
 
-.actived, .dot:hover {
+.actived,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -356,13 +379,23 @@ img {vertical-align: middle;}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+
+  .prev,
+  .next,
+  .text {
+    font-size: 11px
+  }
 }
 
 .modal {
@@ -405,6 +438,7 @@ img {vertical-align: middle;}
     top: -300px;
     opacity: 0;
   }
+
   to {
     top: 0;
     opacity: 1;
@@ -416,6 +450,7 @@ img {vertical-align: middle;}
     top: -300px;
     opacity: 0;
   }
+
   to {
     top: 0;
     opacity: 1;
